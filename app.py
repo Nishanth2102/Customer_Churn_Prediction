@@ -2,13 +2,14 @@ import gradio as gr
 import pandas as pd
 import numpy as np
 import joblib
+from pathlib import Path
 
 
 # ============================================================
 # LOAD TRAINED MODEL
 # ============================================================
 
-MODEL_PATH = "catboost_churn_model.pkl"
+MODEL_PATH = Path(__file__).resolve().parent / "catboost_churn_model.pkl"
 
 model = joblib.load(MODEL_PATH)
 
